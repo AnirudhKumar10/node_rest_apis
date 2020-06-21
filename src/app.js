@@ -8,11 +8,8 @@ import userRoutes from "./routes/users";
 
 const port = process.env.PORT || 3000;
 
-const app = express();
-
-const remoteUrl =
-  "mongodb+srv://admin:admin123@mycluster-oalb1.mongodb.net/test?retryWrites=true&w=majority";
 const localUrl = "mongodb://localhost/shopdb"
+
 mongoose.connect(localUrl, { useNewUrlParser: true });
 mongoose.connection.once("open", () => {
   console.log("MongoDb connected to database succesfully.");
